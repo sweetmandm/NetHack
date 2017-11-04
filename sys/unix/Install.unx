@@ -33,9 +33,11 @@ the file NewInstall.unx.
     be rerun to make sure you use the current copies.)
 
 3.  Go to the include subdirectory and edit config.h according to the
-    comments to match your system and desired set of features.  Similarly
-    edit unixconf.h.  Please see the "Notes:" section, below, for some
-    configuration hints for particular systems.
+    comments to match your system and desired set of features.  You may want
+    to change the definitions of PERSMAX and PERS_IS_UID here to get different
+    behavior from the high score list.  Similarly edit unixconf.h.  Please see
+    the "Notes:" section, below, for some configuration hints for particular
+    systems.
 
 4.  If you want to, look through system.h.  This file attempts to match the
     types for system calls and library routines with various flavors of
@@ -43,11 +45,7 @@ the file NewInstall.unx.
     problems than lint errors, but it's worth checking if you get compile
     errors, especially if you have an unusual system.
 
-5.  Go to the src subdirectory and look at the top of topten.c.  You may want
-    to change the definitions of PERSMAX and PERS_IS_UID here to get different
-    behavior from the high score list.
-
-6.  Edit the top sections of the src and util Makefiles.  (If you are doing
+5.  Edit the top sections of the src and util Makefiles.  (If you are doing
     a full recompile, or if you got your files from someplace besides the
     official distribution, type 'touch makedefs.c' to make sure certain files
     (onames.h, pm.h) get remade instead of relying on the potentially
@@ -55,7 +53,7 @@ the file NewInstall.unx.
     coffee or take a nap, depending on the speed of your system.  You should
     now have created the game executable.
 
-7.  Go back to the top directory and edit that Makefile, explaining where
+6.  Go back to the top directory and edit that Makefile, explaining where
     you want everything to be installed.
 
     Make sure that you follow the comments about setting HACKDIR -- the
@@ -79,12 +77,12 @@ the file NewInstall.unx.
     files the main executable will use.  Then become root if necessary and
     type 'make install'.  Everything should now be set.
 
-8.  Read doc/recover.man or doc/recover.txt to learn how to use the recover
+7.  Read doc/recover.man or doc/recover.txt to learn how to use the recover
     program.  The recover program can be used in case of a crash to recover
     a game that was in progress.  The recover command is installed in the
     HACKDIR by default.
 
-9.  If you specified SYSCF (and SYSCF_FILE) in config.h, create the file
+8.  If you specified SYSCF (and SYSCF_FILE) in config.h, create the file
     defined as SYSCF_FILE and fill in any of the following values if you
     wish to override the compiled-in defaults:
 	WIZARDS= a space-separated list of usernames who can use -D
